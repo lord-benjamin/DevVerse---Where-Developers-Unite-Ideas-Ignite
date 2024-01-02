@@ -1,0 +1,23 @@
+.react-select-container .react-select__control {
+    outline: 0;
+    box-shadow: none;
+    border: solid black 1px;
+    border-radius: 8px;
+    height: 42px;
+    padding: 0 3px;
+}
+.react-select-container .react-select__control .react-select__value-container .react-select__placeholder,
+.react-select-container .react-select__control .react-select__value-container .react-select__input-container {
+    color: black;
+    opacity: 0.4;
+    width: 100%;
+}
+.react-select-container .react-select__control .react-select__single-value {
+    color: black;
+    width: 100%;
+}
+.react-select-container .react-select__menu {
+    border-radius: 8px;
+    margin-top: 8px;
+    color: black;
+}

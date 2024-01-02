@@ -1,0 +1,19 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg fill="black" width="800px" height="800px" viewBox="0 0 512 512" id="_60_Comments" data-name="60 Comments"
+    xmlns="http://www.w3.org/2000/svg" stroke="black">
+
+    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+    <g id="SVGRepo_iconCarrier">
+        <g id="Group_155" data-name="Group 155">
+            <rect id="Rectangle_80" data-name="Rectangle 80" width="256" height="64" transform="translate(128 224)" />
+            <rect id="Rectangle_81" data-name="Rectangle 81" width="256" height="64" transform="translate(128 128)" />
+            <path id="Path_78" data-name="Path 78"
+                d="M480,0H32A31.981,31.981,0,0,0,0,32V384a31.981,31.981,0,0,0,32,32H96v96l144-96H480a31.981,31.981,0,0,0,32-32V32A31.981,31.981,0,0,0,480,0ZM448,352H240l-80,48V352H64V64H448Z" />
+        </g>
+    </g>
+
+</svg>

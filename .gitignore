@@ -1,4 +1,6 @@
 server/node_modules/
 client/node_modules/
+server/config/default.json
 server/config/production.json
-server/vercel.json
+server/vercel
+server/.env

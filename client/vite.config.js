@@ -8,7 +8,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    port: 5173,
     proxy: {
       '/api': {
         target: `${import.meta.env.VITE_CL_DOMAIN}`,

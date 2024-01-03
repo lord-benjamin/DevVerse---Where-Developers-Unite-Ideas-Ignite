@@ -39,7 +39,7 @@ export const getProfiles = () => async (dispatch) => {
   dispatch({ type: CLEAR_OTHER_PROFILE });
 
   try {
-    const res = await axios.get('https://devverse-backend.cyclic.app/api/profile');
+    const res = await axios.get('/api/profile');
     dispatch({
       type: GET_PROFILES,
       payload: res.data,

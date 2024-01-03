@@ -10,17 +10,5 @@ export default({mode}) => {
 
   return defineConfig({
     plugins: [react()],
-    server: {
-      // host: true,
-      proxy: {
-        '/api': {
-          target: process.env.VITE_CL_DOMAIN,
-          changeOrigin: true,
-          // secure: false,
-          // ws: true,
-          rewrite: (path) => path.replace(/^\/api/, ''),
-        },
-      },
-    },
   }); 
 }

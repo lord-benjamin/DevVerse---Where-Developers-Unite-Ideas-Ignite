@@ -10,7 +10,7 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: `${import.meta.env.VITE_CL_DOMAIN}`,
+        target: import.meta.env.VITE_CL_DOMAIN,
         changeOrigin: true,
         secure: false,
         ws: true

@@ -8,7 +8,7 @@ export default defineConfig({
     host: true,
     // port: 5173,
     proxy: {
-      '/api': {
+      '/': {
         target: 'https://devverse-backend.cyclic.app',
         changeOrigin: true,
         secure: true,

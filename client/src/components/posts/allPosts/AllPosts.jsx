@@ -19,7 +19,7 @@ const AllPosts = ({
     getAllPosts();
   }, [getAllPosts, getCurrentProfile]);
 
-  return loading||profile.loading ? (
+  return loading || profile.loading ? (
     <Spinner />
   ) : (
     <section className='space-y-6 md:space-y-10 pb-[40px] md:pb-[70px]'>
@@ -29,7 +29,13 @@ const AllPosts = ({
         </h1>
         <h2 className='text-md md:text-xl font-kalnia font-bold flex gap-3 items-center'>
           <img className='h-5 w-5 md:h-7 md:w-7' src={communityImg}></img>
-          <p>Welcome to the community - <span className='font-montserrat font-semibold mx-1'>{posts===null ? '0' : posts.length}</span> posts till now on the platform...</p>
+          <p>
+            Welcome to the community -{' '}
+            <span className='font-montserrat font-semibold mx-1'>
+              {posts === null ? '0' : posts.length}
+            </span>{' '}
+            posts till now on the platform...
+          </p>
         </h2>
       </div>
       {profile.profile === null ? (
@@ -47,8 +53,8 @@ const AllPosts = ({
         />
       )}
       <div className='space-y-3 md:space-y-8'>
-        {posts.map((post) => (
-          <PostItem key={post._id} post={post} />
+        {posts?.map((post) => (
+          <PostItem key={post?._id} post={post} />
         ))}
       </div>
     </section>

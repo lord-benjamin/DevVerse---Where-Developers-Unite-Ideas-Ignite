@@ -20,7 +20,7 @@ import {
 //Get current users profile
 export const getCurrentProfile = () => async (dispatch) => {
   try {
-    const res = await axios.get('/api/profile/me');
+    const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/profile/me`);
     dispatch({
       type: GET_PROFILE,
       payload: res.data,
@@ -57,7 +57,7 @@ export const getProfiles = () => async (dispatch) => {
 export const getProfileById = (user_id) => async (dispatch) => {
   
   try {
-    const res = await axios.get(`/api/profile/user/${user_id}`);
+    const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/profile/user/${user_id}`);
     // dispatch({ type: CLEAR_OTHER_PROFILE });
     dispatch({
       type: GET_OTHER_PROFILE,
@@ -75,7 +75,7 @@ export const getProfileById = (user_id) => async (dispatch) => {
 //Get Github Repos
 export const getGithubRepos = (username) => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/profile/github/${username}`);
+    const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/profile/github/${username}`);
     dispatch({
       type: GET_REPOS,
       payload: res.data,
@@ -99,7 +99,7 @@ export const createAndEditProfile =
         },
       };
 
-      const res = await axios.post('/api/profile', formData, config);
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/profile`, formData, config);
 
       dispatch({
         type: GET_PROFILE,
@@ -143,7 +143,7 @@ export const addExperience = (formData) => async (dispatch) => {
       },
     };
 
-    const res = await axios.put('/api/profile/experience', formData, config);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/profile/experience`, formData, config);
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data,
@@ -181,7 +181,7 @@ export const editExperience = (formData, exp_id) => async (dispatch) => {
     };
 
     const res = await axios.put(
-      `/api/profile/experience/${exp_id}`,
+      `${import.meta.env.VITE_BACKEND_URL}/api/profile/experience/${exp_id}`,
       formData,
       config
     );
@@ -210,7 +210,7 @@ export const editExperience = (formData, exp_id) => async (dispatch) => {
 //Delete experience
 export const deleteExperience = (exp_id) => async (dispatch) => {
   try {
-    const res = await axios.delete(`/api/profile/experience/${exp_id}`);
+    const res = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/profile/experience/${exp_id}`);
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -238,7 +238,7 @@ export const addEducation = (formData) => async (dispatch) => {
       },
     };
 
-    const res = await axios.put('/api/profile/education', formData, config);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/profile/education`, formData, config);
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -278,7 +278,7 @@ export const editEducation = (formData, edu_id) => async (dispatch) => {
     };
 
     const res = await axios.put(
-      `/api/profile/education/${edu_id}`,
+      `${import.meta.env.VITE_BACKEND_URL}/api/profile/education/${edu_id}`,
       formData,
       config
     );
@@ -307,7 +307,7 @@ export const editEducation = (formData, edu_id) => async (dispatch) => {
 //Delete education
 export const deleteEducation = (edu_id) => async (dispatch) => {
   try {
-    const res = await axios.delete(`/api/profile/education/${edu_id}`);
+    const res = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/profile/education/${edu_id}`);
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -335,7 +335,7 @@ export const deleteAccount = (deletePosts) => async (dispatch) => {
       },
     };
     await axios.delete(
-      '/api/users',
+      `${import.meta.env.VITE_BACKEND_URL}/api/users`,
       { data: { deletePosts: deletePosts } },
       config
     );
@@ -368,7 +368,7 @@ export const deleteAccount = (deletePosts) => async (dispatch) => {
 //Follow a profile
 export const followUser = (user_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/profile/user/${user_id}/follow`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/profile/user/${user_id}/follow`);
     dispatch({
       type: FOLLOW_ADDED,
       payload: {user_id,followers: res.data.targetFollowers,following: res.data.userFollowing},
@@ -391,7 +391,7 @@ export const followUser = (user_id) => async (dispatch) => {
 //Unfollow a profile
 export const unfollowUser = (user_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/profile/user/${user_id}/unfollow`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/profile/user/${user_id}/unfollow`);
     dispatch({
       type: FOLLOW_REMOVED,
       payload: {user_id,followers: res.data.targetFollowers,following: res.data.userFollowing},
@@ -411,7 +411,7 @@ export const unfollowUser = (user_id) => async (dispatch) => {
 //Get all user's posts
 export const getAllUserPosts = (user_id) => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/profile/user/${user_id}/posts`);
+    const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/profile/user/${user_id}/posts`);
 
     dispatch({
       type: GET_ALL_POSTS,
@@ -429,7 +429,7 @@ export const getAllUserPosts = (user_id) => async (dispatch) => {
 //Delete all user's posts
 export const deleteAllPosts = () => async (dispatch) => {
   try {
-    await axios.delete('/api/posts');
+    await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/posts`);
 
     dispatch({
       type: DELETE_ALL_POSTS

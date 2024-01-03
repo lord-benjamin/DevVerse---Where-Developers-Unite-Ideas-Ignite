@@ -20,7 +20,7 @@ export const getAllPosts = () => async (dispatch) => {
   dispatch({ type: CLEAR_POST });
 
   try {
-    const res = await axios.get('/api/posts');
+    const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/posts`);
     dispatch({
       type: GET_POSTS,
       payload: res.data,
@@ -37,7 +37,7 @@ export const getAllPosts = () => async (dispatch) => {
 //Add like
 export const addLike = (post_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/${post_id}/like`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/like`);
     dispatch({
       type: UPDATE_LIKES,
       payload: { post_id, likes: res.data },
@@ -54,7 +54,7 @@ export const addLike = (post_id) => async (dispatch) => {
 //Remove like
 export const removeLike = (post_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/${post_id}/unlike`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/unlike`);
     dispatch({
       type: UPDATE_LIKES,
       payload: { post_id, likes: res.data },
@@ -71,7 +71,7 @@ export const removeLike = (post_id) => async (dispatch) => {
 //Add dislike
 export const addDislike = (post_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/${post_id}/dislike`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/dislike`);
     dispatch({
       type: UPDATE_DISLIKES,
       payload: { post_id, dislikes: res.data },
@@ -88,7 +88,7 @@ export const addDislike = (post_id) => async (dispatch) => {
 //Remove dislike
 export const removeDislike = (post_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/${post_id}/undislike`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/undislike`);
     dispatch({
       type: UPDATE_DISLIKES,
       payload: { post_id, dislikes: res.data },
@@ -105,7 +105,7 @@ export const removeDislike = (post_id) => async (dispatch) => {
 //Delete post
 export const deletePost = (post_id) => async (dispatch) => {
   try {
-    await axios.delete(`/api/posts/${post_id}`);
+    await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}`);
 
     dispatch({
       type: DELETE_POST,
@@ -129,7 +129,7 @@ export const addPost = (formData) => async (dispatch) => {
     },
   };
   try {
-    const res = await axios.post('/api/posts', formData, config);
+    const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/posts`, formData, config);
 
     dispatch({
       type: ADD_POST,
@@ -180,7 +180,7 @@ export const addComment = (post_id,formData) => async (dispatch) => {
     },
   };
   try {
-    const res = await axios.post(`/api/posts/${post_id}/comment`, formData, config);
+    const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/comment`, formData, config);
 
     dispatch({
       type: ADD_COMMENT,
@@ -206,7 +206,7 @@ export const addComment = (post_id,formData) => async (dispatch) => {
 //Delete comment
 export const deleteComment = (post_id,comment_id) => async (dispatch) => {
   try {
-    await axios.delete(`/api/posts/${post_id}/comment/${comment_id}`);
+    await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/comment/${comment_id}`);
 
     dispatch({
       type: DELETE_COMMENT,
@@ -225,7 +225,7 @@ export const deleteComment = (post_id,comment_id) => async (dispatch) => {
 //Add comment like
 export const addCommentLike = (post_id,comment_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/${post_id}/comment/${comment_id}/like`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/comment/${comment_id}/like`);
     dispatch({
       type: UPDATE_COMMENT_LIKES,
       payload: { comment_id, likes: res.data },
@@ -242,7 +242,7 @@ export const addCommentLike = (post_id,comment_id) => async (dispatch) => {
 //Remove comment like
 export const removeCommentLike = (post_id,comment_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/${post_id}/comment/${comment_id}/unlike`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/comment/${comment_id}/unlike`);
     dispatch({
       type: UPDATE_COMMENT_LIKES,
       payload: { comment_id, likes: res.data },
@@ -259,7 +259,7 @@ export const removeCommentLike = (post_id,comment_id) => async (dispatch) => {
 //Add comment dislike
 export const addCommentDislike = (post_id,comment_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/${post_id}/comment/${comment_id}/dislike`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/comment/${comment_id}/dislike`);
     dispatch({
       type: UPDATE_COMMENT_DISLIKES,
       payload: { comment_id, dislikes: res.data },
@@ -276,7 +276,7 @@ export const addCommentDislike = (post_id,comment_id) => async (dispatch) => {
 //Remove comment dislike
 export const removeCommentDislike = (post_id,comment_id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/${post_id}/comment/${comment_id}/undislike`);
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}/comment/${comment_id}/undislike`);
     dispatch({
       type: UPDATE_COMMENT_DISLIKES,
       payload: { comment_id, dislikes: res.data },

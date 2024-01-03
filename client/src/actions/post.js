@@ -157,7 +157,7 @@ export const addPost = (formData) => async (dispatch) => {
 //Get post by id
 export const getPostById = (post_id) => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/posts/${post_id}`);
+    const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${post_id}`);
 
     dispatch({
       type: GET_POST,

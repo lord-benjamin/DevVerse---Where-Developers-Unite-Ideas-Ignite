@@ -14,7 +14,7 @@ export default({mode}) => {
       // host: true,
       proxy: {
         '/api': {
-          target: `${process.env.VITE_CL_DOMAIN}`,
+          target: process.env.VITE_CL_DOMAIN,
           changeOrigin: true,
           // secure: false,
           // ws: true,

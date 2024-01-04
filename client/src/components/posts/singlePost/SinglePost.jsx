@@ -46,28 +46,54 @@ const SinglePost = ({
 
   const likeHandler = () => {
     addLike(post_id);
-    // setLikeState(true);
-    // setDislikeState(false);
-    setter();
+    setLikeState(true);
+    setDislikeState(false);
+    setTimeout(() => {
+      getPostById(post_id);
+    }, 250);
+    // setter();
   };
   const removeLikeHandler = () => {
     removeLike(post_id);
-    // setLikeState(false);
-    setter();
+    setLikeState(false);
+    setTimeout(() => {
+      getPostById(post_id);
+    }, 250);
+    // setter();
   };
   const dislikeHandler = () => {
     addDislike(post_id);
-    // setLikeState(false);
-    // setDislikeState(true);
-    setter();
+    setLikeState(false);
+    setDislikeState(true);
+    setTimeout(() => {
+      getPostById(post_id);
+    }, 250);
+    // setter();
   };
   const removeDislikeHandler = () => {
     removeDislike(post_id);
-    // setDislikeState(false);
-    setter();
+    setDislikeState(false);
+    setTimeout(() => {
+      getPostById(post_id);
+    }, 250);
+    // setter();
   };
 
-  const setter = useCallback(() => {
+  // const setter = useCallback(() => {
+  //   if (post?.likes?.find((like) => like.user === auth?.user?._id)) {
+  //     setLikeState(true);
+  //     setDislikeState(false);
+  //   } else {
+  //     setLikeState(false);
+  //   }
+  //   if (post?.dislikes?.find((dislike) => dislike.user === auth?.user?._id)) {
+  //     setLikeState(false);
+  //     setDislikeState(true);
+  //   } else {
+  //     setDislikeState(false);
+  //   }
+  // }, [post]);
+  const setter = () => {
     if (post?.likes?.find((like) => like.user === auth?.user?._id)) {
       setLikeState(true);
       setDislikeState(false);
@@ -80,12 +106,12 @@ const SinglePost = ({
     } else {
       setDislikeState(false);
     }
-  }, [post]);
+  };
 
   useEffect(() => {
-    setter();
     getPostById(post_id);
-  }, [getPostById, post_id, setter]);
+    setter();
+  }, []);
 
   return auth.loading || loading || post === null ? (
     <Spinner />

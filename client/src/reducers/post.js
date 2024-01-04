@@ -94,7 +94,7 @@ export default function (state = initialState, action) {
           comments: state.post.comments.map((comment) =>
             comment._id === payload.comment_id
               ? { ...comment, likes: payload.likes }
-              : { comment }
+              : comment 
           ),
         },
         loading: false,
@@ -107,7 +107,7 @@ export default function (state = initialState, action) {
           comments: state.post.comments.map((comment) =>
             comment._id === payload.comment_id
               ? { ...comment, dislikes: payload.dislikes }
-              : { comment }
+              : comment
           ),
         },
         loading: false,

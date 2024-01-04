@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db')
-const cors = require('cors')
 
 const app = express();
 app.use(express.static(__dirname + "/public"));
@@ -11,7 +10,6 @@ connectDB();
 
 //Init Middleware
 app.use(express.json({extended: false}));
-app.use(cors())
 
 app.get('/', (req, res) => {
     res.send('Server running');

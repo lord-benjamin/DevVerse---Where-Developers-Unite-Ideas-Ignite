@@ -87,7 +87,7 @@ const ProfileItem = ({
       <div className='h-full w-full flex flex-col lg:flex-row justify-between pt-4 pb-2 px-0 md:py-4 md:pl-8 lg:pr-6 gap-6 z-[1]'>
         <div className='h-full space-y-3'>
           <div className='flex flex-col md:flex-row lg:flex-col items-center lg:items-start gap-1 md:gap-3 lg:gap-1'>
-            <h1 className='text-2xl font-montserrat font-bold'>{name}</h1>
+            <h1 className='text-2xl font-montserrat font-bold text-center'>{name}</h1>
             <span className='hidden md:block lg:hidden w-[1px] h-[25px] border border-white rounded-full opacity-70'></span>
             <h3 className='font-montserrat font-medium text-sm md:text-base text-center'>
               {status} {company && <span>{`at ${company}`}</span>}

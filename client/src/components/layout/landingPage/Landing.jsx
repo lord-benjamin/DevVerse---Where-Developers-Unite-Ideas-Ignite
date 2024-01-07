@@ -18,16 +18,16 @@ const Landing = ({isAuthenticated}) => {
   return (
     <section className='h-[calc(100vh-85px)] md:h-[calc(100vh-125px)] w-full'>
       <div className='text-center absolute left-0 bottom-0 top-0 right-0'>
-        <div className='absolute w-full h-40 top-0 bg-gradient-to-b from-black to-transparent'></div>
-        <div className='absolute w-full h-40 bottom-0 bg-gradient-to-t from-black to-transparent'></div>
-        <div className='absolute w-full h-full bg-black bg-opacity-50'></div>
+        {/* <div className='absolute w-full h-full bg-black bg-opacity-50'></div> */}
         <video
           src={videoBg}
           autoPlay
           muted
           loop
-          className='object-cover h-screen w-screen'
+          className='object-cover h-screen w-screen brightness-50'
         />
+        <div className='absolute w-full h-40 top-0 bg-gradient-to-b from-black to-transparent'></div>
+        <div className='absolute w-full h-40 bottom-0 bg-gradient-to-t from-black to-transparent'></div>
         <div className='text-white space-y-6 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-2 sm:px-4'>
           <h1 className='text-4xl md:text-6xl  tracking-normal sm:tracking-widest font-syncopate font-bold bg-gradient-to-r from-light to-dark text-transparent bg-clip-text'>
             Developer Universe

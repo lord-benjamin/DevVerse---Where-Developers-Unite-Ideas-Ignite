@@ -106,12 +106,16 @@ const SinglePost = ({
     } else {
       setDislikeState(false);
     }
+    console.log('setter called')
   };
 
   useEffect(() => {
     getPostById(post_id);
+  }, [getPostById,post_id]);
+
+  useEffect(() => {
     setter();
-  }, []);
+  },[setter])
 
   return auth.loading || loading || post === null ? (
     <Spinner />

@@ -47,7 +47,7 @@ const App = () => {
           <Alert />
         </div>
         <Header />
-        <section className='min-h-[calc(100vh-125px)] md:min-h-[calc(100vh-195px)] w-full px-2 sm:px-5 md:px-10 max-w-7xl mx-auto'>
+        <section className='min-h-[calc(100vh-125px)] md:min-h-[calc(100vh-195px)] w-full px-2 sm:px-5 md:px-10 mt-[85px] md:mt-[125px] max-w-7xl mx-auto pb-[40px] md:pb-[70px]'>
           <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/register' element={<Register />} />

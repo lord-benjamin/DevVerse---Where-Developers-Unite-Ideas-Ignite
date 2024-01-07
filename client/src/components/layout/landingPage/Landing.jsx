@@ -16,7 +16,7 @@ const Landing = ({isAuthenticated}) => {
   }, []);
 
   return (
-    <section className='h-[calc(100vh-85px)] md:h-[calc(100vh-125px)] w-full'>
+    <section className='h-[calc(100vh)] md:h-[calc(100vh)] w-full'>
       <div className='text-center absolute left-0 bottom-0 top-0 right-0'>
         {/* <div className='absolute w-full h-full bg-black bg-opacity-50'></div> */}
         <video
